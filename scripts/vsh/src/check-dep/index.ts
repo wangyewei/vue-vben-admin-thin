@@ -47,7 +47,7 @@ async function runDepcheck() {
         unused.missing[key] = (unused.missing[key] || []).filter(
           (item: string) => !item.startsWith('/'),
         );
-        if (unused.missing[key].length === 0) {
+        if (unused.missing[key]?.length === 0) {
           Reflect.deleteProperty(unused.missing, key);
         }
       });
